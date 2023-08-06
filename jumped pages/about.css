@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img {
+width: 100px;
+border-radius: 50px;
+cursor: pointer;
+}
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 10%;
+}
+.nav_links {
+list-style: none;
+padding: 10px 30px;
+}
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav_links li a {
+transition:all .3s ease 0s;
+}
+.nav_links li a :hover{
+transition:all .3s ease 0s;
+color: aqua;
+}
+button {
+padding: 9px 25px;  
+background-color: beige;
+border: none;
+border-radius: 50px;
+cursor: pointer;
+transition:all .3s ease 0s;
+}
+button :hover {
+background-color: blue;
+}
+.maindoc {
+    text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 100px;
+    font-family: sans-serif;
+    font-weight: normal;
+    font-size: large;
+    color: cyan;
+}
+.my_text {
+    text-decoration: blue;
+    justify-content: center;
+}
+body {
+    background-image: url(/img/Aboutbg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bio {
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 80px;
+}
+h1 {
+    font-size: 40px;
+    font-weight: 900;
+}
+h3 {
+    color: #2a2623;
+}
