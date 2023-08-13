@@ -67,41 +67,44 @@
 
   const errorMsg = document.getElementById("error-msg");
 
-  function deleteTodo(inputValue){
-    alert(inputValue)
-    
+  let itemId = 0;
+
+  function deleteTodo(id) {
+      const itemToDelete = document.getElementById(`item-${id}`);
+      if (itemToDelete) {
+          itemToDelete.remove();
+      }
   }
 
   btn.addEventListener("click", () => {
-    const inputValue = input.value;
+      const inputValue = input.value;
 
-    const generatedHtml = `
-    <div class="card my-3 shadow-sm border-0 border-start border-5 border-success">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <div class="">
-                                <div class="fw-semibold fs-5">
-                                    ${inputValue}
-                                </div>
-                                <small class="text-muted fw-semibold">Created: 10th Aug 2023</small> | 
-                                <small class="text-danger fw-semibold">Due Date: 12th Aug 2023</small>
-                            </div>
-                            
-                            <div>
-                                <button onclick="deleteTodo('${inputValue}')" class="btn btn-danger btn-sm">Delete</button>
-                            </div>
-                            
-                            
-                        </div>
-    </div>
-    `;
+      const generatedHtml = `
+      <div id="item-${itemId}" class="card my-3 shadow-sm border-0 border-start border-5 border-success">
+          <div class="card-body d-flex justify-content-between align-items-center">
+              <div class="">
+                  <div class="fw-semibold fs-5">
+                      ${inputValue}
+                  </div>
+                  <small class="text-muted fw-semibold">Created: 10th Aug 2023</small> | 
+                  <small class="text-danger fw-semibold">Due Date: 12th Aug 2023</small>
+              </div>
+              
+              <div>
+                  <button onclick="deleteTodo(${itemId})" class="btn btn-danger btn-sm">Delete</button>
+              </div>
+          </div>
+      </div>
+      `;
 
-    if(inputValue){
-        todoList.innerHTML =  todoList.innerHTML + generatedHtml;
-        input.value = "";
-        errorMsg.innerText = ""
-    } else {
-        errorMsg.innerText = "Input filed cannot be empty!"
-    }
+      if (inputValue) {
+          todoList.innerHTML = todoList.innerHTML + generatedHtml;
+          input.value = "";
+          errorMsg.innerText = "";
 
+          itemId++; // Increment the ID for the next item
+      } else {
+          errorMsg.innerText = "Input field cannot be empty!";
+      }
   });
 </script>
